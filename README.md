@@ -39,8 +39,8 @@ All profile fields are in `src/data/cards.ts`.
 The supplied profile image and brand graphic are in:
 
 ```text
-public/images/vandana.jpg
-public/images/infinitum-network.png
+public/images/vandana.webp
+public/images/infinitum-network.webp
 ```
 
 The verified email address is `vandana@infinitumnetwork.in`.

@@ -1,0 +1,17 @@
+{
+  "name": "Vandana B — Digital Business Card",
+  "short_name": "Vandana B",
+  "description": "Digital contact card for Vandana B at Infinitum Network Solutions.",
+  "start_url": "/vandana-b",
+  "display": "standalone",
+  "background_color": "#020608",
+  "theme_color": "#020608",
+  "icons": [
+    {
+      "src": "/images/infinitum-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

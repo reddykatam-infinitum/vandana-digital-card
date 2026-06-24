@@ -26,11 +26,7 @@ Open `http://localhost:3000`. The root route redirects to `/vandana-b`.
 
 ## Deploy to Vercel
 
-Import this repository into Vercel and keep the detected framework as **Next.js**. Optionally configure:
-
-```text
-NEXT_PUBLIC_SITE_URL=https://your-final-domain.com
-```
+Import this repository into Vercel and keep the detected framework as **Next.js**.
 
 ## Edit profile information
 
@@ -39,8 +35,8 @@ All profile fields are in `src/data/cards.ts`.
 The supplied profile image and brand graphic are in:
 
 ```text
-public/images/vandana.webp
-public/images/infinitum-network.webp
+public/images/vandana.jpg
+public/images/infinitum-network.png
 ```
 
 The verified email address is `vandana@infinitumnetwork.in`.

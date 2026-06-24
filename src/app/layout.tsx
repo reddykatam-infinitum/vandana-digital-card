@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     siteName: "Infinitum Digital Card",
     title: "Vandana B | Infinitum Network Solutions",
     description: "Founder and Managing Director at Infinitum Network Solutions.",
-    images: [{ url: "/images/vandana.webp", width: 900, height: 900 }]
+    images: [{ url: "/images/vandana.jpg", width: 900, height: 900 }]
   },
-  twitter: { card: "summary_large_image", images: ["/images/vandana.webp"] }
+  twitter: { card: "summary_large_image", images: ["/images/vandana.jpg"] }
 };
 
 export const viewport: Viewport = {

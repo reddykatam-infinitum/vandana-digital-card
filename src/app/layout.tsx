@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
+const profileImage = "https://vandana-contact-page-m3gz.vercel.app/avatar.jpg";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Vandana B | Infinitum Network Solutions", template: "%s | Infinitum" },
@@ -14,9 +16,9 @@ export const metadata: Metadata = {
     siteName: "Infinitum Digital Card",
     title: "Vandana B | Infinitum Network Solutions",
     description: "Founder and Managing Director at Infinitum Network Solutions.",
-    images: [{ url: "/images/vandana.jpg", width: 900, height: 900 }]
+    images: [{ url: profileImage, width: 627, height: 612, alt: "Vandana B" }]
   },
-  twitter: { card: "summary_large_image", images: ["/images/vandana.jpg"] }
+  twitter: { card: "summary_large_image", images: [profileImage] }
 };
 
 export const viewport: Viewport = {

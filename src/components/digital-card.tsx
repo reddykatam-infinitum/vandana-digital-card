@@ -32,28 +32,42 @@ function AppIcon({ name }: { name: IconName }) {
 }
 
 const IconBox = ({ name }: { name: IconName }) => <span className="icon"><AppIcon name={name} /></span>;
-const infinitumLogo = "/api/logo";
+const infinitumLogo = "/images/infinitum-network.png?v=20260624";
 
 export function DigitalCard({ card }: { card: CardData }) {
   const [qrOpen, setQrOpen] = useState(false);
+  const [contactHelpOpen, setContactHelpOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    if (!qrOpen) return;
-    const close = (e: KeyboardEvent) => e.key === "Escape" && setQrOpen(false);
+    if (!qrOpen && !contactHelpOpen) return;
+    const close = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setQrOpen(false);
+        setContactHelpOpen(false);
+      }
+    };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", close);
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", close);
     };
-  }, [qrOpen]);
+  }, [qrOpen, contactHelpOpen]);
 
   async function saveContact() {
+    const contactUrl = `/api/vcard/${card.slug}`;
+    const isAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isAppleMobile) {
+      window.location.assign(contactUrl);
+      return;
+    }
+
     setSaving(true);
     try {
-      const response = await fetch(`/api/vcard/${card.slug}`);
+      const response = await fetch(contactUrl);
       const blob = await response.blob();
       const file = new File([blob], `${card.slug}.vcf`, { type: "text/vcard" });
       const shareData = { files: [file], title: `${card.name} contact` };
@@ -62,11 +76,11 @@ export function DigitalCard({ card }: { card: CardData }) {
       if (navigator.share && nav.canShare?.(shareData)) {
         await navigator.share(shareData);
       } else {
-        window.location.href = `/api/vcard/${card.slug}`;
+        setContactHelpOpen(true);
       }
     } catch (error) {
       if ((error as DOMException)?.name !== "AbortError") {
-        window.location.href = `/api/vcard/${card.slug}`;
+        setContactHelpOpen(true);
       }
     } finally {
       setSaving(false);
@@ -128,7 +142,7 @@ export function DigitalCard({ card }: { card: CardData }) {
           </div>
 
           <div className="main-actions">
-            <button type="button" onClick={saveContact} className="save-button"><AppIcon name="download" /><span>{saving ? "Opening…" : "Add to Phone"}</span></button>
+            <button type="button" onClick={saveContact} className="save-button"><AppIcon name="download" /><span>{saving ? "Opening…" : "Save Contact"}</span></button>
             <button onClick={shareCard} className="share-button"><AppIcon name="share" />{copied ? "Link Copied" : "Share Card"}</button>
           </div>
         </section>
@@ -183,6 +197,19 @@ export function DigitalCard({ card }: { card: CardData }) {
             <h3>{card.name}</h3>
             <div className="qr-box"><QRCodeSVG value={typeof window === "undefined" ? `/${card.slug}` : window.location.href} size={230} level="H" marginSize={2} /></div>
             <p>Point any phone camera at this QR code.</p>
+          </div>
+        </div>
+      )}
+
+      {contactHelpOpen && (
+        <div className="modal" onMouseDown={() => setContactHelpOpen(false)}>
+          <div className="modal-card contact-help" onMouseDown={(e) => e.stopPropagation()}>
+            <button className="close" onClick={() => setContactHelpOpen(false)}>×</button>
+            <p className="eyebrow">SAVE TO CONTACTS</p>
+            <h3>One confirmation is required</h3>
+            <p>Android browsers do not allow a website to silently add someone to your phonebook. Download the contact card, open it from your Downloads notification, then choose <b>Contacts → Import</b>.</p>
+            <a className="contact-download" href={`/api/vcard/${card.slug}`} download={`${card.slug}.vcf`}><AppIcon name="download" /> Download Contact Card</a>
+            <button className="contact-cancel" onClick={() => setContactHelpOpen(false)}>Cancel</button>
           </div>
         </div>
       )}

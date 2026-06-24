@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-label="Infinitum network graphic">
+  <g fill="none" stroke="#18aee6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <path d="M95 275 190 190 302 230 390 125 550 155 650 285 770 210"/>
+    <path d="M115 510 240 430 335 555 480 470 610 600 780 505"/>
+    <path d="M190 190 240 430M302 230 335 555M390 125 480 470M550 155 610 600M650 285 780 505" opacity="0.72"/>
+    <path d="M835 215 950 120 1085 195 1195 90 1325 185 1490 120"/>
+    <path d="M840 455 980 375 1095 510 1230 430 1370 560 1515 480"/>
+    <path d="M950 120 980 375M1085 195 1095 510M1195 90 1230 430M1325 185 1370 560M1490 120 1515 480" opacity="0.72"/>
+  </g>
+  <g fill="#18aee6">
+    <circle cx="95" cy="275" r="22"/><circle cx="190" cy="190" r="15"/><circle cx="302" cy="230" r="23"/><circle cx="390" cy="125" r="17"/><circle cx="550" cy="155" r="28"/><circle cx="650" cy="285" r="19"/><circle cx="770" cy="210" r="24"/>
+    <circle cx="115" cy="510" r="18"/><circle cx="240" cy="430" r="26"/><circle cx="335" cy="555" r="20"/><circle cx="480" cy="470" r="34"/><circle cx="610" cy="600" r="24"/><circle cx="780" cy="505" r="31"/>
+    <circle cx="835" cy="215" r="24"/><circle cx="950" cy="120" r="18"/><circle cx="1085" cy="195" r="28"/><circle cx="1195" cy="90" r="34"/><circle cx="1325" cy="185" r="19"/><circle cx="1490" cy="120" r="23"/>
+    <circle cx="840" cy="455" r="17"/><circle cx="980" cy="375" r="25"/><circle cx="1095" cy="510" r="21"/><circle cx="1230" cy="430" r="31"/><circle cx="1370" cy="560" r="22"/><circle cx="1515" cy="480" r="29"/>
+  </g>
+  <g fill="none" stroke="#65ddff" stroke-width="8">
+    <circle cx="520" cy="610" r="34"/><circle cx="1015" cy="225" r="31"/><circle cx="1460" cy="570" r="28"/>
+  </g>
+</svg>

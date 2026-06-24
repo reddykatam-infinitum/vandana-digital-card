@@ -6,11 +6,12 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
   const { slug } = await params;
   const card = getCard(slug);
   if (!card) return NextResponse.json({ error: "Card not found" }, { status: 404 });
+
   return new NextResponse(buildVCard(card), {
     status: 200,
     headers: {
       "Content-Type": "text/vcard; charset=utf-8",
-      "Content-Disposition": `attachment; filename="${card.slug}.vcf"`,
+      "Content-Disposition": `inline; filename="${card.slug}.vcf"`,
       "Cache-Control": "public, max-age=3600"
     }
   });

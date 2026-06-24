@@ -170,11 +170,6 @@ export function DigitalCard({ card }: { card: CardData }) {
               <span className="education">{card.education}</span>
             </div>
           </div>
-
-          <div className="main-actions">
-            <button type="button" onClick={saveContact} className="save-button"><AppIcon name="download" /><span>{saving ? "Opening…" : "Save Contact"}</span></button>
-            <button onClick={shareCard} className="share-button"><AppIcon name="share" />{copied ? "Link Copied" : "Share Card"}</button>
-          </div>
         </section>
 
         <nav className="quick-actions" aria-label="Quick contact actions">
@@ -214,6 +209,13 @@ export function DigitalCard({ card }: { card: CardData }) {
           <h3>Share this digital card</h3>
           <p>Let anyone save Vandana&apos;s details in seconds.</p>
           <button onClick={() => setQrOpen(true)}><AppIcon name="qr" /> Show QR Code</button>
+        </section>
+
+        <section className="bottom-actions" aria-label="Card actions">
+          <div className="main-actions">
+            <button type="button" onClick={saveContact} className="save-button"><AppIcon name="download" /><span>{saving ? "Opening…" : "Save Contact"}</span></button>
+            <button onClick={shareCard} className="share-button"><AppIcon name="share" />{copied ? "Link Copied" : "Share Card"}</button>
+          </div>
         </section>
 
         <footer><BrandLogo alt="" /><span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span><em>© 2026</em></footer>

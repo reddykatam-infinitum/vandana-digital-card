@@ -1,4 +1,4 @@
-export type SocialPlatform = "linkedin" | "instagram" | "youtube" | "facebook" | "x";
+export type SocialPlatform = "linkedin" | "youtube" | "facebook" | "x";
 
 export type SocialLink = {
   platform: SocialPlatform;
@@ -56,8 +56,7 @@ export const cards: DigitalCard[] = [
     address: "Plot No. 702, Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033, India",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Plot+No+702+Road+No+36+Jubilee+Hills+Hyderabad+Telangana+500033",
     socialLinks: [
-      { platform: "linkedin", label: "LinkedIn", handle: "vandanabandaru", url: "https://www.linkedin.com/in/vandanabandaru" },
-      { platform: "instagram", label: "Instagram", handle: "@vandanab", url: "https://www.instagram.com/vandanab/" }
+      { platform: "linkedin", label: "LinkedIn", handle: "vandanabandaru", url: "https://www.linkedin.com/in/vandanabandaru" }
     ]
   }
 ];

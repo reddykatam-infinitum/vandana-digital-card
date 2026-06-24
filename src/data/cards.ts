@@ -43,7 +43,7 @@ export const cards: DigitalCard[] = [
     headline: "Building global creator ecosystems, original IPs and digital media businesses.",
     education: "M.B.A. — Finance, Ohio University",
     educationSecondary: "Doctorate in Gen AI — Golden Gate University",
-    profileImage: "https://vandana-contact-page-m3gz.vercel.app/avatar.jpg",
+    profileImage: "/images/vandana.jpg?v=20260624-2",
     companyMark: "/images/infinitum-mark.svg",
     companyPattern: "/images/infinitum-network.svg",
     phone: "+919885700015",

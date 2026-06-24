@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { cards } from "@/data/cards";
+import { siteUrl } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://vandana-card.vercel.app";
   return cards.map((card) => ({
-    url: `${baseUrl}/${card.slug}`,
+    url: `${siteUrl}/${card.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 1

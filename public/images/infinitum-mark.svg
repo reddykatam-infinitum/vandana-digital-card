@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 96" role="img" aria-label="Infinitum mark">
+  <g fill="none" stroke="#18aee6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 58 34 24 61 42 86 15 106 47"/>
+    <path d="M20 76 48 60 70 80 102 67" opacity="0.8"/>
+    <path d="M34 24 48 60M61 42 70 80M86 15 102 67" opacity="0.65"/>
+  </g>
+  <g fill="#18aee6">
+    <circle cx="14" cy="58" r="7"/><circle cx="34" cy="24" r="6"/><circle cx="48" cy="60" r="7"/><circle cx="61" cy="42" r="8"/><circle cx="70" cy="80" r="6"/><circle cx="86" cy="15" r="8"/><circle cx="102" cy="67" r="7"/><circle cx="106" cy="47" r="5"/>
+  </g>
+</svg>

@@ -32,7 +32,37 @@ function AppIcon({ name }: { name: IconName }) {
 }
 
 const IconBox = ({ name }: { name: IconName }) => <span className="icon"><AppIcon name={name} /></span>;
-const infinitumLogo = "/images/infinitum-network.png?v=20260624";
+
+const driveLogoSources = [
+  "https://lh3.googleusercontent.com/d/1DOneq1T0Hyi-xtbXrtSlX_ikvLq22Q9X",
+  "https://drive.google.com/uc?export=view&id=1DOneq1T0Hyi-xtbXrtSlX_ikvLq22Q9X",
+  "https://drive.google.com/thumbnail?id=1DOneq1T0Hyi-xtbXrtSlX_ikvLq22Q9X&sz=w1000"
+];
+
+function BrandLogo({ className, alt = "Infinitum" }: { className?: string; alt?: string }) {
+  const [sourceIndex, setSourceIndex] = useState(0);
+  const [hidden, setHidden] = useState(false);
+
+  if (hidden) return null;
+
+  return (
+    <img
+      src={driveLogoSources[sourceIndex]}
+      alt={alt}
+      className={className}
+      loading="eager"
+      onError={() => {
+        if (sourceIndex < driveLogoSources.length - 1) {
+          setSourceIndex((current) => current + 1);
+        } else {
+          setHidden(true);
+        }
+      }}
+    />
+  );
+}
+
+const networkPattern = "/images/infinitum-network.svg";
 
 export function DigitalCard({ card }: { card: CardData }) {
   const [qrOpen, setQrOpen] = useState(false);
@@ -117,10 +147,10 @@ export function DigitalCard({ card }: { card: CardData }) {
     <main className="page-shell">
       <article className="card-shell">
         <section className="hero">
-          <img src={infinitumLogo} alt="" className="network-bg" aria-hidden="true" />
+          <img src={networkPattern} alt="" className="network-bg" aria-hidden="true" />
           <header className="brand-row">
             <a href={card.website} target="_blank" rel="noreferrer" className="brand">
-              <img src={infinitumLogo} alt="Infinitum" className="brand-mark" />
+              <BrandLogo className="brand-mark" />
               <span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span>
             </a>
             <button className="icon-button" onClick={() => setQrOpen(true)} aria-label="Show QR code"><AppIcon name="qr" /></button>
@@ -186,7 +216,7 @@ export function DigitalCard({ card }: { card: CardData }) {
           <button onClick={() => setQrOpen(true)}><AppIcon name="qr" /> Show QR Code</button>
         </section>
 
-        <footer><img src={infinitumLogo} alt="" aria-hidden="true" /><span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span><em>© 2026</em></footer>
+        <footer><BrandLogo alt="" /><span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span><em>© 2026</em></footer>
       </article>
 
       {qrOpen && (

@@ -58,6 +58,32 @@ export const cards: DigitalCard[] = [
     socialLinks: [
       { platform: "linkedin", label: "LinkedIn", handle: "vandanabandaru", url: "https://www.linkedin.com/in/vandanabandaru" }
     ]
+  },
+  {
+    slug: "satyadev-chada",
+    name: "Satyadev Chada",
+    firstName: "Satyadev",
+    lastName: "Chada",
+    role: "Founder & Director",
+    company: "Infinitum Network Solutions",
+    headline: "Building global creator ecosystems, original IPs and digital media businesses.",
+    education: "",
+    educationSecondary: "",
+    profileImage: "/api/profile/satyadev-chada",
+    companyMark: "/images/infinitum-mark.svg",
+    companyPattern: "/images/infinitum-network.svg",
+    phone: "+919905800015",
+    phoneDisplay: "+91 99058 00015",
+    whatsapp: "919905800015",
+    email: "sd@infinitumnetwork.in",
+    website: "https://www.infinitumnetworksolutions.com/",
+    websiteDisplay: "infinitumnetworksolutions.com",
+    location: "Jubilee Hills, Hyderabad",
+    address: "Plot No. 702, Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033, India",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Plot+No+702+Road+No+36+Jubilee+Hills+Hyderabad+Telangana+500033",
+    socialLinks: [
+      { platform: "linkedin", label: "LinkedIn", handle: "sd-chada-2733021b7", url: "https://www.linkedin.com/in/sd-chada-2733021b7/" }
+    ]
   }
 ];
 

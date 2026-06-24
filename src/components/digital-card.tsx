@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import type { DigitalCard as CardData } from "@/data/cards";
@@ -52,10 +51,10 @@ export function DigitalCard({ card }: { card: CardData }) {
     <main className="page-shell">
       <article className="card-shell">
         <section className="hero">
-          <Image src={card.companyLogo} alt="" width={1200} height={700} className="network-bg" priority />
+          <img src={card.companyPattern} alt="" className="network-bg" aria-hidden="true" />
           <header className="brand-row">
             <a href={card.website} target="_blank" rel="noreferrer" className="brand">
-              <Image src={card.companyLogo} alt="Infinitum" width={48} height={34} />
+              <img src={card.companyMark} alt="Infinitum" className="brand-mark" />
               <span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span>
             </a>
             <button className="icon-button" onClick={() => setQrOpen(true)} aria-label="Show QR code">▦</button>
@@ -63,7 +62,7 @@ export function DigitalCard({ card }: { card: CardData }) {
 
           <div className="profile-grid">
             <div className="photo-wrap">
-              <Image src={card.profileImage} alt={card.name} width={190} height={190} className="photo" priority />
+              <img src={card.profileImage} alt={card.name} className="photo" loading="eager" referrerPolicy="no-referrer" />
               <span className="status"><i /> Executive Profile</span>
             </div>
             <div className="identity">
@@ -121,7 +120,7 @@ export function DigitalCard({ card }: { card: CardData }) {
           <button onClick={() => setQrOpen(true)}>▦ Show QR Code</button>
         </section>
 
-        <footer><Image src={card.companyLogo} alt="" width={36} height={28} /><span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span><em>© 2026</em></footer>
+        <footer><img src={card.companyMark} alt="" aria-hidden="true" /><span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span><em>© 2026</em></footer>
       </article>
 
       {qrOpen && (

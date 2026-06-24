@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vandana-card.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: { default: "Vandana B | Infinitum Network Solutions", template: "%s | Infinitum" },
   description: "Official digital business card for Vandana B, Founder and Managing Director at Infinitum Network Solutions.",
   applicationName: "Vandana B Digital Card",

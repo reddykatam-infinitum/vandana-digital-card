@@ -17,7 +17,8 @@ export type DigitalCard = {
   headline: string;
   education: string;
   profileImage: string;
-  companyLogo: string;
+  companyMark: string;
+  companyPattern: string;
   phone: string;
   phoneDisplay: string;
   whatsapp: string;
@@ -40,8 +41,9 @@ export const cards: DigitalCard[] = [
     company: "Infinitum Network Solutions",
     headline: "Building global creator ecosystems, original IPs and digital media businesses.",
     education: "M.B.A. — Finance, Ohio University · 2005",
-    profileImage: "/images/vandana.jpg",
-    companyLogo: "/images/infinitum-network.png",
+    profileImage: "https://vandana-contact-page-m3gz.vercel.app/avatar.jpg",
+    companyMark: "/images/infinitum-mark.svg",
+    companyPattern: "/images/infinitum-network.svg",
     phone: "+919885700015",
     phoneDisplay: "+91 98857 00015",
     whatsapp: "919885700015",

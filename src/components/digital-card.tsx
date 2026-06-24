@@ -5,6 +5,7 @@ import { QRCodeSVG } from "qrcode.react";
 import type { DigitalCard as CardData } from "@/data/cards";
 
 const Icon = ({ children }: { children: React.ReactNode }) => <span className="icon">{children}</span>;
+const infinitumLogo = "/images/infinitum-uploaded-logo.svg";
 
 export function DigitalCard({ card }: { card: CardData }) {
   const [qrOpen, setQrOpen] = useState(false);
@@ -51,10 +52,10 @@ export function DigitalCard({ card }: { card: CardData }) {
     <main className="page-shell">
       <article className="card-shell">
         <section className="hero">
-          <img src={card.companyPattern} alt="" className="network-bg" aria-hidden="true" />
+          <img src={infinitumLogo} alt="" className="network-bg" aria-hidden="true" />
           <header className="brand-row">
             <a href={card.website} target="_blank" rel="noreferrer" className="brand">
-              <img src={card.companyMark} alt="Infinitum" className="brand-mark" />
+              <img src={infinitumLogo} alt="Infinitum" className="brand-mark" />
               <span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span>
             </a>
             <button className="icon-button" onClick={() => setQrOpen(true)} aria-label="Show QR code">▦</button>
@@ -120,7 +121,7 @@ export function DigitalCard({ card }: { card: CardData }) {
           <button onClick={() => setQrOpen(true)}>▦ Show QR Code</button>
         </section>
 
-        <footer><img src={card.companyMark} alt="" aria-hidden="true" /><span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span><em>© 2026</em></footer>
+        <footer><img src={infinitumLogo} alt="" aria-hidden="true" /><span><b>INFINITUM</b><small>NETWORK SOLUTIONS</small></span><em>© 2026</em></footer>
       </article>
 
       {qrOpen && (

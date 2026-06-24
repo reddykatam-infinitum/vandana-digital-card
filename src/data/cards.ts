@@ -16,6 +16,7 @@ export type DigitalCard = {
   company: string;
   headline: string;
   education: string;
+  educationSecondary: string;
   profileImage: string;
   companyMark: string;
   companyPattern: string;
@@ -37,10 +38,11 @@ export const cards: DigitalCard[] = [
     name: "Vandana B",
     firstName: "Vandana",
     lastName: "B",
-    role: "Founder & Managing Director",
+    role: "Co-Founder & Managing Director",
     company: "Infinitum Network Solutions",
     headline: "Building global creator ecosystems, original IPs and digital media businesses.",
-    education: "M.B.A. — Finance, Ohio University · 2005",
+    education: "M.B.A. — Finance, Ohio University",
+    educationSecondary: "Doctorate in Gen AI — Golden Gate University",
     profileImage: "https://vandana-contact-page-m3gz.vercel.app/avatar.jpg",
     companyMark: "/images/infinitum-mark.svg",
     companyPattern: "/images/infinitum-network.svg",

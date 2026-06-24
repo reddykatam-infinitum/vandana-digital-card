@@ -18,7 +18,7 @@ export function buildVCard(card: DigitalCard): string {
     `EMAIL;TYPE=INTERNET,WORK:${escapeVCard(card.email)}`,
     `URL;TYPE=WORK:${escapeVCard(card.website)}`,
     `ADR;TYPE=WORK:;;${escapeVCard(card.address)};;;;`,
-    `NOTE:${escapeVCard(`${card.headline}\n${card.education}`)}`,
+    `NOTE:${escapeVCard(`${card.headline}\n${card.education}\n${card.educationSecondary}`)}`,
     ...socialProfiles,
     "END:VCARD"
   ].join("\r\n");

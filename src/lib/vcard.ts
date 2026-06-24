@@ -6,6 +6,8 @@ function escapeVCard(value: string): string {
 
 export function buildVCard(card: DigitalCard): string {
   const socialProfiles = card.socialLinks.map((link) => `X-SOCIALPROFILE;TYPE=${link.platform.toUpperCase()}:${escapeVCard(link.url)}`);
+  const noteLines = [card.headline, card.education, card.educationSecondary].filter(Boolean).join("\n");
+
   return [
     "BEGIN:VCARD",
     "VERSION:3.0",
@@ -18,7 +20,7 @@ export function buildVCard(card: DigitalCard): string {
     `EMAIL;TYPE=INTERNET,WORK:${escapeVCard(card.email)}`,
     `URL;TYPE=WORK:${escapeVCard(card.website)}`,
     `ADR;TYPE=WORK:;;${escapeVCard(card.address)};;;;`,
-    `NOTE:${escapeVCard(`${card.headline}\n${card.education}\n${card.educationSecondary}`)}`,
+    `NOTE:${escapeVCard(noteLines)}`,
     ...socialProfiles,
     "END:VCARD"
   ].join("\r\n");

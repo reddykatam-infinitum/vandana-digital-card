@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const profileImage = "https://vandana-contact-page-m3gz.vercel.app/avatar.jpg";
+const profileImage = "/images/vandana.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

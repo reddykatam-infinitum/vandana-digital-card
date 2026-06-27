@@ -38,7 +38,7 @@ export const cards: DigitalCard[] = [
     name: "Vandana B",
     firstName: "Vandana",
     lastName: "B",
-    role: "Co-Founder & Managing Director",
+    role: "Co-Founder",
     company: "Infinitum Network Solutions",
     headline: "Building global creator ecosystems, original IPs and digital media businesses.",
     education: "M.B.A. — Finance, Ohio University",

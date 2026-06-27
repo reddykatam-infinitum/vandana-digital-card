@@ -7,7 +7,7 @@ const profileImage = "/images/vandana.jpg";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Vandana B | Infinitum Network Solutions", template: "%s | Infinitum" },
-  description: "Official digital business card for Vandana B, Co-Founder and Managing Director at Infinitum Network Solutions.",
+  description: "Official digital business card for Vandana B, Co-Founder at Infinitum Network Solutions.",
   applicationName: "Vandana B Digital Card",
   manifest: "/manifest.webmanifest",
   icons: { icon: "/images/infinitum-icon.svg", apple: "/images/infinitum-icon.svg" },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "profile",
     siteName: "Infinitum Digital Card",
     title: "Vandana B | Infinitum Network Solutions",
-    description: "Co-Founder and Managing Director at Infinitum Network Solutions.",
+    description: "Co-Founder at Infinitum Network Solutions.",
     images: [{ url: profileImage, width: 627, height: 612, alt: "Vandana B" }]
   },
   twitter: { card: "summary_large_image", images: [profileImage] }
